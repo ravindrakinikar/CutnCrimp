@@ -1,0 +1,71 @@
+<h1 class="text-right">Actuals Two</h1>
+<h1 class="text-right">{{currentEmp.name}}</h1>
+
+<table class="table  table-bordered table-hover">
+  <caption>You have selected this</caption>
+  <tr class="success" style="font-weight: bold">
+    <th>Lead</th>
+    <th>Machine</th>
+    <th>Model</th>
+    <th>FO Number</th>
+    <th>Batch Number</th>
+  </tr>
+  <tr class="info">
+    <td >{{formData.lead}}</td>
+    <td >{{formData.machine}}</td>
+    <td >{{formData.model}}</td>
+    <td >{{formData.foNumber}}</td>
+    <td >{{formData.batchNumber}}</td>
+  </tr>
+</table>
+
+<form class="form-horizontal" name="form" ng-submit="saveActualsTwo()"
+	role="form">
+	
+	<div class="form-group">
+		<label class="col-sm-2 control-label" for="machine_name">Strip Length </label>
+	<div class="col-sm-10">
+			<input type="number" name="stripLength" id="stripLength"
+				class="form-control" ng-model="stripLength" required /> <span
+				ng-show="form.stripLength.$dirty && form.stripLength.$error.required"
+				class="help-block">Strip Length</span>
+		</div>
+	</div>
+		
+	<div class="form-group">
+		<label class="col-sm-2 control-label" for="machine_name">Crimp Width </label>
+		<div class="col-sm-10">
+			<input type="number" name="crimpWidth" id="crimpWidth"
+				class="form-control" ng-model="crimpWidth" required /> <span
+				ng-show="form.crimpWidth.$dirty && form.crimpWidth.$error.required"
+				class="help-block">Crimp Width</span>
+		</div>
+	</div>
+		
+	<div class="form-group">
+		<label class="col-sm-2 control-label" for="machine_name">Pull Force </label>
+		<div class="col-sm-10">
+			<input type="number" name="pullForce" id="pullForce"
+				class="form-control" ng-model="pullForce" required /> <span
+				ng-show="form.pullForce.$dirty && form.pullForce.$error.required"
+				class="help-block">Pull Force</span>
+		</div>
+	</div>
+		
+	<div class="form-group">
+		<label class="col-sm-2 control-label" for="machine_name">Appearance </label>
+		<div class="col-sm-10">
+			<input type="text" name="appearance" id="appearance"
+				class="form-control" ng-model="appearance" required /> <span
+				ng-show="form.appearance.$dirty && form.appearance.$error.required"
+				class="help-block">Appearance</span>
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<div class="col-sm-offset-2 col-sm-10">
+			<button ng-if="!employe" type="submit"
+				ng-disabled="form.$invalid || dataLoading" class="btn btn-danger">submit</button>
+		</div>
+	</div>
+</form>

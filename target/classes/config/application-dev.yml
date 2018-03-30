@@ -1,0 +1,37 @@
+#Web Server properties
+server:
+    port: 8080
+
+
+
+#Spring properties
+spring:
+  datasource:
+    serverName: te_database
+    driverClassName: com.mysql.jdbc.Driver
+    databaseName: te_database
+    url: jdbc:mysql://localhost:3306/te_database
+    user: root
+    password: root
+    prepStmtCacheSize: 250
+    prepStmtCacheSqlLimit: 2048
+    cachePrepStmts: true
+    useServerPrepStmts: true
+    dataSourceClassName: com.mysql.jdbc.jdbc2.optional.MysqlDataSource
+    poolName: profilerConnectionPool
+    maximumPoolSize: 50
+    minimumIdle: 6
+    connectionTimeout: 30000
+    idleTimeout: 30000
+    
+  jpa:
+    show-sql : true
+    
+logging:
+  file: my.log
+  level:
+    org.hibernate : DEBUG
+    
+
+
+    

@@ -1,0 +1,46 @@
+.form-input {
+	width: 50%;
+}
+
+.radio-div {
+	width: 100%;
+}
+
+.radio-label {
+	width: 50%;
+	float: left;
+}
+
+.table-td {
+	padding: 3px !important;
+}
+
+.welcome-container {
+	width: 100%;
+	height: 100px;
+}
+
+.form-supervisor{
+	width:70%;
+	float:left;
+}
+
+.welcome-div1 {
+	width: 50%;
+	float: right;
+}
+
+.welcome-div2 {
+	width: 50%;
+	float: left;
+}
+
+.lead-details-container{
+	width:30%;
+	float:left;
+}
+
+.form-div{
+	padding-left: 0px;
+	padding-right: 0px;
+}

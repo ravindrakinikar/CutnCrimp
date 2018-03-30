@@ -1,0 +1,119 @@
+<!-- <uib-tabset active="activeJustified" justified="true">
+    <uib-tab ng-click="modelClick()" index="0" heading="Model/Lead Details"> -->
+<div class="welcome-container">
+	<div class="welcome-div1">
+		<h2 class="text-right">welcome {{currentEmp.name}}</h2>
+	</div>
+	<div class="welcome-div2">
+		<h2 class="text-left">{{date | date:'yyyy-MM-dd'}}</h2>
+	</div>
+</div>
+<form class="form-horizontal form-supervisor" name="form" ng-submit="saveLeadFactory()"
+	role="form">
+	<!-- <div class="form-group">
+		<label class="col-sm-2 control-label" for="machine_name">Terminal
+			Number: </label>
+		<div class="col-sm-6">
+			<select class="form-control" ng-model="terminalNumber"
+				ng-options="x.terminalId for x in terminals" name="terminal">
+				<option value="">Select Terminal</option>
+			</select>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-2 control-label" for="shift">Select Shift
+			:</label>
+		<div class="col-sm-6">
+			<select class="form-control" ng-model="selectedShift"
+				ng-options="x.shiftDescription for x in shifts" name="shift">
+				<option value="">Select Shift</option>
+			</select>
+		</div>
+	</div> -->
+	<div class="form-group">
+		<label class="col-sm-2 control-label" for="machine_name">Fo No:</label>
+		<div class="col-sm-6">
+			<input type="number" name="fono" id="qty"
+				class="form-control" ng-model="foNo" required /> <span
+				ng-show="form.foNo.$dirty && form.foNo.$error.required"
+				class="help-block">Fo No is required</span>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-2 control-label" for="machine_name">Machine
+			Name:</label>
+		<div class="col-sm-6">
+			<select class="form-control" id="machine_name"
+				data-ng-model="machine"
+				data-ng-options="option.machineName for option in machines">
+				<option value="">Select Machine</option>
+			</select>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-2 control-label" for="machine_name">Model
+			Name:</label>
+		<div class="col-sm-6">
+			<select class="form-control" data-ng-model="model"
+				data-ng-options="option.name for option in models"
+				data-ng-change="getLead(model)">
+				<option value="">Select Model</option>
+			</select>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-2 control-label" for="machine_name">Lead
+			Name: </label>
+		<div class="col-sm-6">
+			<select class="form-control" data-ng-model="lead"
+				data-ng-options="option.id for option in leads">
+				<option value="">Select Lead</option>
+			</select>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-2 control-label" for="machine_name">Cut Qty:</label>
+		<div class="col-sm-6">
+			<input type="number" name="qty" id="qty"
+				class="form-control" ng-model="qty" required /> <span
+				ng-show="form.qty.$dirty && form.qty.$error.required"
+				class="help-block">quantity is required</span>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-2 control-label" for="machine_name">Batch
+			Number: </label>
+		<div class="col-sm-6">
+			<input type="number" name="batchNumber" id="batchNumber"
+				class="form-control" ng-model="batchNumber" required /> <span
+				ng-show="form.batchNumber.$dirty && form.batchNumber.$error.required"
+				class="help-block">Batch Number is required</span>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<div class="col-sm-offset-2 col-sm-6">
+			<button ng-if="!employe" type="submit"
+				ng-disabled="form.$invalid || dataLoading" class="btn btn-danger">submit</button>
+		</div>
+	</div>
+</form>
+<div ng-if="lead" class="lead-details-container">
+<div class="lead-details-header">Lead details</div>
+<div><span>color:</span><span>{{lead.color}}</span></div>
+<div><span>core diameter:</span><span>{{lead.coro_dia}}</span></div>
+<div><span>crimp height:</span><span>{{lead.crimp_height}}</span></div>
+<div><span>crimp width:</span><span>{{lead.crimp_width}}</span></div>
+<div><span>factory number:</span><span>{{lead.factoryNumber}}</span></div>
+<div><span>gauge:</span><span>{{lead.gauge}}</span></div>
+<div><span>pull force:</span><span>{{lead.pull_force}}</span></div>
+<div><span>side type:</span><span>{{lead.side_type}}</span></div>
+<div><span>strands:</span><span>{{lead.strands}}</span></div>
+<div><span>strip length:</span><span>{{lead.strip_length}}</span></div>
+<div><span>way back:</span><span>{{lead.wayback}}</span></div>
+<div><span>wire length:</span><span>{{lead.wire_length}}</span></div>
+</div>
+<!--  </uib-tab>
+    <uib-tab index="1" heading="SJ">Short Labeled Justified content</uib-tab>
+    <uib-tab index="2" heading="Long Justified">Long Labeled Justified content</uib-tab>
+  </uib-tabset> -->
