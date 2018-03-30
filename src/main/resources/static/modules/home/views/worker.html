@@ -1,0 +1,30 @@
+<h1 class="text-right">Worker Screen</h1>
+<h1 class="text-right">{{currentEmp.name}}</h1>
+
+<div class="col-sm-6">
+	<select class="form-control" id="machine_name" data-ng-model="machine"
+		data-ng-options="option.machineName for option in machines" data-ng-change="getMachine(machine)">
+		<option value="">Select Machine</option>
+	</select>
+</div>
+
+<table class="table  table-bordered table-hover">
+	<tr class="success" style="font-weight: bold">
+		<th>Lead Factory No</th>
+		<th>Lead</th>
+		<th>Batch No</th>
+		<th>Machine Number</th>
+		<th>Cut Quantity</th>
+		<th>status</th>
+		<th>Action</th>
+	</tr>
+	<tr class="info" ng-repeat="leadActual in leadActuals">
+		<td>{{leadActual.lfNo}}</td>
+		<td>{{leadActual.leadNo}}</td>
+		<td>{{leadActual.batchNo}}</td>
+		<td>{{leadActual.machineNo}}</td>
+		<td>{{leadActual.cutQuantity}}</td>
+		<td>{{leadActual.status}}</td>
+		<td><button type="submit" ng-disabled="leadActual.status=='COMPLETED'" class="btn btn-danger" ng-click="redirect(leadActual)">Start</button></td>
+	</tr>
+</table>

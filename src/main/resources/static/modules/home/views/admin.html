@@ -1,0 +1,29 @@
+<h1 class="text-right">Admin Screen</h1>
+<h1 class="text-right">{{currentEmp.name}}</h1>
+<div>
+	Add new order
+	<button type="submit" class="btn btn-danger" ng-click="redirect()">Add</button>
+</div>
+<div>
+	<table class="table  table-bordered table-hover">
+		<tr class="success" style="font-weight: bold">
+			<th>Lead Factory No</th>
+			<th>Lead</th>
+			<th>Fo No</th>
+			<th>Batch No</th>
+			<th>Machine Number</th>
+			<th>Cut Quantity</th>
+			<th>status</th>
+
+		</tr>
+		<tr class="info" ng-repeat="leadActual in leadActuals">
+			<td>{{leadActual.lfNo}}</td>
+			<td>{{leadActual.leadNo}}</td>
+			<td>{{leadActual.foNo}}</td>
+			<td>{{leadActual.batchNo}}</td>
+			<td>{{leadActual.machineNo}}</td>
+			<td>{{leadActual.cutQuantity}}</td>
+			<td>{{leadActual.status}}</td>
+		</tr>
+	</table>
+</div>

@@ -1,0 +1,319 @@
+<div class="welcome-container">
+	<div class="welcome-div1">
+		<h2 class="text-right">welcome {{currentEmp.name}}</h2>
+	</div>
+	<div class="welcome-div2">
+		<h2 class="text-left">{{date | date:'yyyy-MM-dd'}}</h2>
+	</div>
+</div>
+
+<div style="width: 100%">
+	<div style="width: 50%; float: left">
+		<table class="table table-bordered table-hover ">
+
+			<tr class="info" style="font-weight: bold">
+				<td>Model No</td>
+				<td>{{leadActuals.model}}</td>
+				<td>Color</td>
+				<td>{{leadActuals.color}}</td>
+			</tr>
+
+			<tr class="info" style="font-weight: bold">
+				<td>Lead No</td>
+				<td>{{leadActuals.lead}}</td>
+				<td>Gauge</td>
+				<td>{{leadActuals.gauge}}</td>
+			</tr>
+
+			<tr class="info" style="font-weight: bold">
+				<td>Fo No</td>
+				<td>{{leadActuals.factoryNumber}}</td>
+				<td>Type</td>
+				<td>{{leadActuals.type}}</td>
+			</tr>
+
+			<tr class="info" style="font-weight: bold">
+				<td>Batch No</td>
+				<td>{{leadActuals.batchNo}}</td>
+				<td>Strand</td>
+				<td>{{leadActuals.strands}}</td>
+			</tr>
+
+		</table>
+	</div>
+	<div style="width: 50%; float: left; padding-left: 20px;height:172px;" >
+		<table class="table table-bordered  ">
+			<caption style="text-align: center">Reference Wire</caption>
+			<tr class="success" style="font-weight: bold">
+				<th>SL</th>
+				<th>H</th>
+				<th>W</th>
+				<th>L</th>
+				<th>F</th>
+				<th>CD</th>
+				<th>WB</th>
+			</tr>
+			<tr class="info">
+				<td>{{leadActuals.stripLength}}</td>
+				<td>{{leadActuals.crimpHeight}}</td>
+				<td>{{leadActuals.crimpWidth}}</td>
+				<td>{{leadActuals.wireLength}}</td>
+				<td>{{leadActuals.pullForce}}</td>
+				<td>{{leadActuals.coroDia}}</td>
+				<td>{{leadActuals.wayback}}</td>
+			</tr>
+		</table>
+	</div>
+	<!-- <div class="radio-div">
+<label class="radio-label">
+    <input type="radio" ng-model="color" value="true">
+    Load>3000
+  </label><br/>
+ 
+  <label>
+    <input type="radio" ng-model="color" value="false">
+    Load<=3000
+  </label><br/>
+  </div>
+</div> -->
+
+  
+ <!--  <div>color : {{color}}</div> -->
+
+
+
+<form class="form-horizontal" name="form" ng-submit="saveActualsOne()"
+	role="form">
+	<table class="table table-bordered ">
+		<tr>
+			<td></td>
+			<td></td>
+			<td colspan="5">Height</td>
+			<td colspan="5">Length</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>Frequency</td>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+			<td>4</td>
+			<td>5</td>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+			<td>4</td>
+			<td>5</td>
+		</tr>
+		<tr>
+			<td rowspan="3">L</td>
+			<td>S1</td>
+			<td class="table-td"><div class="col-sm-10 form-div">
+					<input type="number" name="wireLength5" id="wireLength5"
+						class="form-control" ng-model="actual1.wireLength1" ng-disabled="isDisabled" required /> <span
+						
+						class="help-block"></span>
+				</div></td>
+			<td class="table-td"><div class="col-sm-10 form-div">
+					<input type="number" name="wireLength5" id="wireLength5"
+						class="form-control" ng-model="actual1.wireLength2" ng-disabled="isDisabled" required /> <span
+						
+						class="help-block"></span>
+				</div></td>
+			<td class="table-td"><div class="col-sm-10 form-div">
+					<input type="number" name="wireLength5" id="wireLength5"
+						class="form-control" ng-model="actual1.wireLength3" ng-disabled="isDisabled" required /> <span
+						
+						class="help-block"></span>
+				</div></td>
+			<td class="table-td"><div class="col-sm-10 form-div">
+					<input type="number" name="wireLength5" id="wireLength5"
+						class="form-control" ng-model="actual1.wireLength4" ng-disabled="isDisabled" required /> <span
+						
+						class="help-block"></span>
+				</div></td>
+			<td class="table-td"><div class="col-sm-10 form-div">
+					<input type="number" name="wireLength5" id="wireLength5"
+						class="form-control" ng-model="actual1.wireLength5" ng-disabled="isDisabled" required /> <span
+						
+						class="help-block"></span>
+				</div></td>
+			<td class="table-td"><div class="col-sm-10 form-div form-div">
+					<input type="number" name="wireLength5" id="wireLength5"
+						class="form-control" ng-model="actual1.wireWidth1" ng-disabled="isDisabled" required /> <span
+						
+						class="help-block"></span>
+				</div></td>
+			<td class="table-td"><div class="col-sm-10 form-div">
+					<input type="number" name="wireLength5" id="wireLength5"
+						class="form-control" ng-model="actual1.wireWidth2" ng-disabled="isDisabled" required /> <span
+						
+						class="help-block"></span>
+				</div></td>
+			<td class="table-td"><div class="col-sm-10 form-div">
+					<input type="number" name="wireLength5" id="wireLength5"
+						class="form-control" ng-model="actual1.wireWidth3" ng-disabled="isDisabled" required /> <span
+						
+						class="help-block"></span>
+				</div></td>
+			<td class="table-td"><div class="col-sm-10 form-div">
+					<input type="number" name="wireLength5" id="wireLength5"
+						class="form-control" ng-model="actual1.wireWidth4" ng-disabled="isDisabled" required /> <span
+						
+						class="help-block"></span>
+				</div></td>
+			<td class="table-td"><div class="col-sm-10 form-div">
+					<input type="number" name="wireLength5" id="wireLength5"
+						class="form-control" ng-model="actual1.wireWidth5" ng-disabled="isDisabled" required /> <span
+						
+						class="help-block"></span>
+				</div></td>
+				
+				<td class="table-td"><div class="col-sm-10 form-div">
+					<button type="submit" class="btn btn-danger" ng-click="isDisabled=true">Finalized</button> 
+				</div></td>
+			<!-- <td><div class="col-sm-10 form-div">
+					<input type="number" name="wireLength5" id="wireLength5"
+						class="form-control" ng-model="actual1.wireLength5" required /> <span
+						
+						class="help-block"></span>
+				</div></td> -->
+		</tr>
+		<tr>
+
+			<td class="table-td">S2</td>
+			<td class="table-td"><div class="col-sm-10 form-div">
+					<input type="number" name="wireLength5" id="wireLength5"
+						class="form-control" ng-model="actual2.wireLength1" ng-disabled="!isDisabled" required /> <span
+						
+						class="help-block"></span>
+				</div></td>
+			<td class="table-td"><div class="col-sm-10 form-div">
+					<input type="number" name="wireLength5" id="wireLength5"
+						class="form-control" ng-model="actual2.wireLength2" ng-disabled="!isDisabled" required /> <span
+						
+						class="help-block"></span>
+				</div></td>
+			<td class="table-td"><div class="col-sm-10 form-div">
+					<input type="number" name="wireLength5" id="wireLength5"
+						class="form-control" ng-model="actual2.wireLength3" ng-disabled="!isDisabled" required /> <span
+						
+						class="help-block"></span>
+				</div></td>
+			<td class="table-td"><div class="col-sm-10 form-div">
+					<input type="number" name="wireLength5" id="wireLength5"
+						class="form-control" ng-model="actual2.wireLength4" ng-disabled="!isDisabled" required /> <span
+						
+						class="help-block"></span>
+				</div></td>
+			<td class="table-td"><div class="col-sm-10 form-div">
+					<input type="number" name="wireLength5" id="wireLength5"
+						class="form-control" ng-model="actual2.wireLength5" ng-disabled="!isDisabled" required /> <span
+						
+						class="help-block"></span>
+				</div></td>
+			<td class="table-td"><div class="col-sm-10 form-div">
+					<input type="number" name="wireLength5" id="wireLength5"
+						class="form-control" ng-model="actual2.wireWidth1" ng-disabled="!isDisabled" required /> <span
+						
+						class="help-block"></span>
+				</div></td>
+			<td class="table-td"><div class="col-sm-10 form-div">
+					<input type="number" name="wireLength5" id="wireLength5"
+						class="form-control" ng-model="actual2.wireWidth2" ng-disabled="!isDisabled" required /> <span
+						
+						class="help-block"></span>
+				</div></td>
+			<td class="table-td"><div class="col-sm-10 form-div">
+					<input type="number" name="wireLength5" id="wireLength5"
+						class="form-control" ng-model="actual2.wireWidth3" ng-disabled="!isDisabled" required /> <span
+						
+						class="help-block"></span>
+				</div></td>
+			<td class="table-td"><div class="col-sm-10 form-div">
+					<input type="number" name="wireLength5" id="wireLength5"
+						class="form-control" ng-model="actual2.wireWidth4" ng-disabled="!isDisabled" required /> <span
+						
+						class="help-block"></span>
+				</div></td>
+			<td class="table-td"><div class="col-sm-10 form-div">
+					<input type="number" name="wireLength5" id="wireLength5"
+						class="form-control" ng-model="actual2.wireWidth5" ng-disabled="!isDisabled" required /> <span
+						
+						class="help-block"></span>
+				</div></td>
+		</tr>
+		<tr ng-if="selectedLead.cutQuantity>=3000">
+<!-- <div>{{color}}</div>> -->
+			<td class="table-td">S3</td>
+			<td class="table-td"><div class="col-sm-10 form-div">
+					<input type="number" name="wireLength5" id="wireLength5"
+						class="form-control" ng-model="actual3.wireLength1" ng-disabled="!isDisabled" required /> <span
+						
+						class="help-block"></span>
+				</div></td>
+			<td class="table-td"><div class="col-sm-10 form-div">
+					<input type="number" name="wireLength5" id="wireLength5"
+						class="form-control" ng-model="actual3.wireLength2" ng-disabled="!isDisabled" required /> <span
+						
+						class="help-block"></span>
+				</div></td>
+			<td class="table-td"><div class="col-sm-10 form-div">
+					<input type="number" name="wireLength5" id="wireLength5"
+						class="form-control" ng-model="actual3.wireLength3" ng-disabled="!isDisabled" required /> <span
+						
+						class="help-block"></span>
+				</div></td>
+			<td class="table-td"><div class="col-sm-10 form-div">
+					<input type="number" name="wireLength5" id="wireLength5"
+						class="form-control" ng-model="actual3.wireLength4" ng-disabled="!isDisabled" required /> <span
+						
+						class="help-block"></span>
+				</div></td>
+			
+			<td class="table-td"><div class="col-sm-10 form-div">
+					<input type="number" name="wireLength5" id="wireLength5"
+						class="form-control" ng-model="actual3.wireLength5" ng-disabled="!isDisabled" required /> <span
+						
+						class="help-block"></span>
+				</div></td>
+			<td class="table-td"><div class="col-sm-10 form-div">
+					<input type="number" name="wireLength5" id="wireLength5"
+						class="form-control" ng-model="actual3.wireWidth1" ng-disabled="!isDisabled" required /> <span
+						
+						class="help-block"></span>
+				</div></td>
+			<td class="table-td"><div class="col-sm-10 form-div">
+					<input type="number" name="wireLength5" id="wireLength5"
+						class="form-control" ng-model="actual3.wireWidth2" ng-disabled="!isDisabled" required /> <span
+						
+						class="help-block"></span>
+				</div></td>
+			<td class="table-td"><div class="col-sm-10 form-div">
+					<input type="number" name="wireLength5" id="wireLength5"
+						class="form-control" ng-model="actual3.wireWidth3" ng-disabled="!isDisabled" required /> <span
+						
+						class="help-block"></span>
+				</div></td>
+			<td class="table-td"><div class="col-sm-10 form-div">
+					<input type="number" name="wireLength5" id="wireLength5"
+						class="form-control" ng-model="actual3.wireWidth4" ng-disabled="!isDisabled" required /> <span
+						
+						class="help-block"></span>
+				</div></td>
+			<td class="table-td"><div class="col-sm-10 form-div">
+					<input type="number" name="wireLength5" id="wireLength5"
+						class="form-control" ng-model="actual3.wireWidth5" ng-disabled="!isDisabled" required /> <span
+						
+						class="help-block"></span>
+				</div></td>
+		</tr>
+	</table>
+	<div class="form-group">
+		<div class="col-sm-offset-2 col-sm-10 form-div">
+			<button ng-if="!employe" type="submit"
+				ng-disabled="form.$invalid || dataLoading" class="btn btn-danger">submit</button>
+		</div>
+	</div>
+
+</form>
